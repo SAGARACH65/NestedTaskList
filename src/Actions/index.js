@@ -19,5 +19,14 @@ export const removeTodo = id => ({
     type: 'REMOVE_TODO',
     id: id
 });
+export const setVisibility = filter => ({
+    type: 'SET_VISIBILITY',
+    filter:filter
+});
 
+export const Visibility = {
+    SHOW_ALL: 'SHOW_ALL',
+    SHOW_COMPLETED: 'SHOW_COMPLETED',
+    SHOW_ACTIVE: 'SHOW_ACTIVE'
+};
 

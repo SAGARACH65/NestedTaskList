@@ -24,4 +24,5 @@ class TitleBar extends Component {
         );
     }
 }
+
 export default TitleBar;
