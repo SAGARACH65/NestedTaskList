@@ -3,5 +3,5 @@ import todos from './todos'
 
 
 export default combineReducers({
-    todos
+    todos:todos
 })

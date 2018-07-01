@@ -5,8 +5,7 @@ import Paper from '@material-ui/core/Paper';
 
 import FooterNavigation from './FooterNavigation'
 import TitleBar from './TitleBar'
-import AddTodo from './AddTodo'
-import MenuItem from '@material-ui/core/MenuItem';
+import TodoItems from './TodoItems'
 
 
 import {Provider} from 'react-redux'
@@ -18,7 +17,7 @@ class Main extends Component {
             <Provider store={store}>
                 <Paper elevation={4} style={{width: 700}}>
                     <TitleBar/>
-                    <AddTodo/>
+                   <TodoItems/>
                     <FooterNavigation/>
                 </Paper>
             </Provider>
