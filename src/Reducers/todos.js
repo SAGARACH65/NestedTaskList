@@ -9,8 +9,9 @@ const todos = (state = [], action) => {
                     text: action.text,
                     completed: false,
                     isInFocus: false,
-                    // children:[],
-                    // parent:action.parent
+                    children: action.children,
+                    parent: action.parent,
+                    indent:0
                 }
             ];
 
