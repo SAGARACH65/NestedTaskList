@@ -4,15 +4,13 @@ import Checkbox from '@material-ui/core/Checkbox';
 import {ListItem} from 'material-ui/List';
 import TextField from '@material-ui/core/TextField';
 import {store} from '../Store'
-import {changeText, toggleTodo, removeTodo} from "../Actions";
+import {changeText, toggleTodo, removeTodo, addFocus,removeFocus} from "../Actions";
 
 //single to-do element
 class Todo extends Component {
 
-
     render() {
         return (
-
             <ListItem
                 disabled
                 key={this.props.keys}>
@@ -23,12 +21,14 @@ class Todo extends Component {
                     value="checkedB"/>
 
                 <TextField
-                    //textbox will if disabled if to-do is checked
+                    //textbox will be disabled if to-do is checked
                     disabled={this.props.checked}
                     fullWidth
                     key={this.props.keys + 'tf'}
                     value={this.props.text}
                     onChange={event => store.dispatch(changeText(this.props.keys, event.target.value))}
+                    onFocus={() => store.dispatch(addFocus(this.props.keys))}
+                    onBlur={()=>store.dispatch(removeFocus(this.props.keys))}
                     margin="normal"/>
                 <button
                     key={this.props.keys + 'btn'}

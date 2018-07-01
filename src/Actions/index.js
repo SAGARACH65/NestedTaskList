@@ -19,6 +19,15 @@ export const removeTodo = id => ({
     type: 'REMOVE_TODO',
     id: id
 });
+export const addFocus = id => ({
+    type: 'ADD_FOCUS',
+    id: id
+});
+export const removeFocus = id => ({
+    type: 'REMOVE_FOCUS',
+    id: id
+});
+
 export const setVisibility = filter => ({
     type: 'SET_VISIBILITY',
     filter:filter

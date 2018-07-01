@@ -8,11 +8,25 @@ const todos = (state = [], action) => {
                     id: action.id,
                     text: action.text,
                     completed: false,
-                    // isInFocus:false,
+                    isInFocus: false,
                     // children:[],
                     // parent:action.parent
                 }
             ];
+
+        case 'ADD_FOCUS':
+            return state.map(todo =>
+                (todo.id === action.id)
+                    ? {...todo, isInFocus: true}
+                    : todo
+            );
+        case 'REMOVE_FOCUS':
+            return state.map(todo =>
+                (todo.id === action.id)
+                    ? {...todo, isInFocus: false}
+                    : todo
+            );
+
         case 'TOGGLE_TODO':
             return state.map(todo =>
                 (todo.id === action.id)
@@ -28,6 +42,7 @@ const todos = (state = [], action) => {
 
         case 'REMOVE_TODO':
             return state.filter(todo => todo.id !== action.id);
+
 
         default:
             return state
