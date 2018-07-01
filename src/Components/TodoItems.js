@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import AddTodo from './AddTodo';
+import Todo from './Todo';
 import {connect} from 'react-redux';
 import {Visibility} from "../Actions";
 import {store} from '../Store'
@@ -8,9 +8,9 @@ class TodoItems extends Component {
 
 
     render() {
-      
+
         const Todos = this.props.todos.map(todo =>
-            <AddTodo text={todo.text} checked={todo.completed} keys={todo.id}/>
+            <Todo text={todo.text} checked={todo.completed} keys={todo.id}/>
         );
         return (
             <div>
